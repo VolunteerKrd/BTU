@@ -119,15 +119,15 @@ p {
 
 .bullet-list-check {
   list-style-type: none;
-  padding-right: 0;
-  padding-left: 0;
-  /* Changed from right to left padding for RTL */
+  padding: 0;
   text-align: right;
-  /* Aligns the list itself to the right */
-  margin-right: auto;
-  /* Centers the list */
-  margin-left: auto;
-  /* Centers the list */
+  /* Keeps the list items text right-aligned */
+  width: 100%;
+  /* Ensures the list can be centered */
+  margin: auto;
+  /* Centers the list itself */
+  display: inline-block;
+  /* Allows the list to be centered */
 }
 
 .bullet-list-check li {
@@ -160,16 +160,16 @@ p {
   width: 100%;
   margin: 2rem auto;
   height: 60px;
+  z-index: 2;
+  /* Set the z-index on the parent to ensure its children appear on top */
 }
 
 .register-button {
-  /* No change needed here for its basic styling */
   display: flex;
   justify-content: center;
   align-items: center;
   width: 90%;
   max-width: 300px;
-  /* Optional: limit button width */
   padding: 1rem 1.5rem;
   font-size: 1.1rem;
   font-weight: bold;
@@ -181,7 +181,6 @@ p {
   box-shadow: 0 4px 15px var(--shadow-color);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   z-index: 1;
-  /* Ensure button is above other elements if needed */
 }
 
 .register-button:hover {
@@ -195,14 +194,11 @@ p {
     position: absolute;
     width: 30px;
     top: -20px;
-    /* Adjusted top position to be on top of the button */
     left: 50%;
-    /* Centers the hand */
     transform: translateX(-50%);
-    /* Centers the hand */
     animation: point 1.5s infinite;
-    z-index: 2;
-    /* Puts the hand on top of the button */
+    z-index: 3;
+    /* Gave the hand a higher z-index than its parent's children to ensure visibility */
   }
 }
 
@@ -240,11 +236,9 @@ p {
   0% {
     transform: translateY(0) translateX(-50%);
   }
-
   50% {
     transform: translateY(-30px) translateX(-50%);
   }
-
   100% {
     transform: translateY(0) translateX(-50%);
   }
