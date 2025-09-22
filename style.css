@@ -147,7 +147,7 @@ p {
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
-  right: -25px;
+  right: -20px;
   top: 0;
 }
 
@@ -193,8 +193,8 @@ p {
   .pointing-hand-icon {
   position: absolute;
   width: 40px; /* slightly larger for desktop */
-  top: -30px;  /* adjust vertical position */
-  left: 50%;
+  top: -10px;  /* adjust vertical position */
+  left: 70%;
   transform: translateX(-50%);
   animation: point 2s infinite;
   z-index: 5; /* always above the button */
@@ -308,4 +308,5 @@ p {
 
 
   
+
 
