@@ -1,3 +1,8 @@
+* {
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%; /* prevents Safari from resizing text */
+}
+
 :root {
   --primary-color: #78297F;
   /* Dark Purple */
@@ -121,14 +126,12 @@ p {
   list-style-type: none;
   padding: 0;
   text-align: right;
-  /* Keeps the list items text right-aligned */
   width: 100%;
-  /* Ensures the list can be centered */
-  margin: auto;
-  /* Centers the list itself */
-  display: inline-block;
-  /* Allows the list to be centered */
+  margin: 0 auto;
+  display: block;   /* instead of inline-block */
+  max-width: 500px; /* keeps list centered and consistent */
 }
+
 
 .bullet-list-check li {
   position: relative;
@@ -147,7 +150,7 @@ p {
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
-  right: -20px;
+  right: -30px;
   top: 0;
 }
 
@@ -192,13 +195,14 @@ p {
 @media (max-width: 767px) {
   .pointing-hand-icon {
   position: absolute;
-  width: 40px; /* slightly larger for desktop */
-  top: -10px;  /* adjust vertical position */
-  left: 70%;
-  transform: translateX(-50%);
+  width: 40px;
+  top: 50%;                 /* vertically center inside button container */
+  left: 50%;                /* horizontally center */
+  transform: translate(-50%, -30%); /* adjust positioning */
   animation: point 2s infinite;
-  z-index: 5; /* always above the button */
+  z-index: 5;
 }
+
 
 .footer-logo {
   display: flex;
@@ -308,5 +312,6 @@ p {
 
 
   
+
 
 
