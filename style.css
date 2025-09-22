@@ -166,11 +166,14 @@ p {
 /* Styling for the pointing hand icon */
 @media (max-width: 767px) {
     
+  @media (max-width: 767px) {
+    
     .pointing-hand-icon {
-        width: 30px; /* Reduces the size of the hand icon for phones */
-        top: 30px; /* Adjusts the starting position of the hand icon */
-        right: 50%;
-        transform: translateX(calc(50% + 25px)); /* Fine-tunes horizontal position on smaller screens */
+        width: 30px; 
+        top: 30px;
+        left: 50%; /* Position from the left side */
+        transform: translateX(calc(-50% - 20px)); /* Fine-tunes horizontal position on smaller screens */
+        animation: point 1.5s infinite; /* Explicitly re-apply animation */
     }
 
 .footer-logo {
@@ -202,10 +205,10 @@ p {
     }
 }
 
- @keyframes point {
-        0% { transform: translateY(0) translateX(calc(50% + 25px)); }
-        50% { transform: translateY(-30px) translateX(calc(50% + 25px)); }
-        100% { transform: translateY(0) translateX(calc(50% + 25px)); }
+  @keyframes point {
+        0% { transform: translateY(0) translateX(calc(-50% - 20px)); }
+        50% { transform: translateY(-30px) translateX(calc(-50% - 20px)); }
+        100% { transform: translateY(0) translateX(calc(-50% - 20px)); }
     }
 }
 
@@ -263,4 +266,5 @@ p {
 .custom-color {
     color: #B7213E;
 }
+
 
