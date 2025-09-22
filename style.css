@@ -191,15 +191,13 @@ p {
 /* Styling for the pointing hand icon */
 @media (max-width: 767px) {
   .pointing-hand-icon {
-    position: absolute;
-    width: 30px;
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: point 1.5s infinite;
-    z-index: 3;
-    /* Gave the hand a higher z-index than its parent's children to ensure visibility */
-  }
+  position: absolute;
+  width: 40px; /* slightly larger for desktop */
+  top: -30px;  /* adjust vertical position */
+  left: 50%;
+  transform: translateX(-50%);
+  animation: point 2s infinite;
+  z-index: 5; /* always above the button */
 }
 
 .footer-logo {
@@ -299,3 +297,15 @@ p {
 .custom-color {
   color: #B7213E;
 }
+
+  /* Center content wrapper */
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+
+  
+
