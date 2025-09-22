@@ -127,12 +127,24 @@ p {
     top: 0;
 }
 
+/* New container for positioning the hand */
+.register-button-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 2rem auto;
+    height: 60px;
+}
+
 .register-button {
+    /* No change needed here for its basic styling */
     display: flex;
     justify-content: center;
     align-items: center;
     width: 90%;
-    margin: 2rem auto;
+    max-width: 300px; /* Optional: limit button width */
     padding: 1rem 1.5rem;
     font-size: 1.1rem;
     font-weight: bold;
@@ -143,11 +155,24 @@ p {
     border-radius: 50px;
     box-shadow: 0 4px 15px var(--shadow-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1; /* Ensure button is above other elements if needed */
 }
 
 .register-button:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Styling for the pointing hand icon */
+.pointing-hand-icon {
+    position: absolute;
+    top: 50px; /* Positions the icon 50px below the button container */
+    right: 50%;
+    transform: translateX(calc(50% + 50px));
+    width: 40px;
+    height: auto;
+    z-index: 10;
+    animation: point 1.5s infinite;
 }
 
 .footer-logo {
@@ -176,6 +201,18 @@ p {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes point {
+    0% {
+        transform: translateY(0) translateX(calc(50% + 50px)); /* Starting position below the button */
+    }
+    50% {
+        transform: translateY(-50px) translateX(calc(50% + 50px)); /* Moves the icon up */
+    }
+    100% {
+        transform: translateY(0) translateX(calc(50% + 50px)); /* Returns to the starting position */
     }
 }
 
@@ -233,7 +270,3 @@ p {
 .custom-color {
     color: #B7213E;
 }
-
-
-
-
