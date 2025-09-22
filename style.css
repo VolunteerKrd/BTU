@@ -168,12 +168,13 @@ p {
     
   @media (max-width: 767px) {
     
+    @media (max-width: 767px) {
     .pointing-hand-icon {
         width: 30px; 
         top: 30px;
-        left: 50%; /* Position from the left side */
-        transform: translateX(calc(-50% - 20px)); /* Fine-tunes horizontal position on smaller screens */
-        animation: point 1.5s infinite; /* Explicitly re-apply animation */
+        left: 50%;
+        transform: translateX(-15px); /* Adjusted value for better horizontal positioning */
+        animation: point 1.5s infinite;
     }
 
 .footer-logo {
@@ -206,9 +207,9 @@ p {
 }
 
   @keyframes point {
-        0% { transform: translateY(0) translateX(calc(-50% - 20px)); }
-        50% { transform: translateY(-30px) translateX(calc(-50% - 20px)); }
-        100% { transform: translateY(0) translateX(calc(-50% - 20px)); }
+        0% { transform: translateY(0) translateX(-15px); }
+        50% { transform: translateY(-30px) translateX(-15px); }
+        100% { transform: translateY(0) translateX(-15px); }
     }
 }
 
@@ -266,5 +267,6 @@ p {
 .custom-color {
     color: #B7213E;
 }
+
 
 
